@@ -327,7 +327,7 @@
             label11.Size = new Size(63, 26);
             label11.TabIndex = 18;
             label11.Text = "Cost";
-            label11.Click += this.label11_Click;
+            //label11.Click += this.label11_Click;
             // 
             // textBox3
             // 
