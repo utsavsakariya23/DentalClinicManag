@@ -47,6 +47,8 @@
             pictureBox1 = new PictureBox();
             label9 = new Label();
             panel2 = new Panel();
+            button3 = new Button();
+            button2 = new Button();
             button1 = new Button();
             Time = new DateTimePicker();
             Date = new DateTimePicker();
@@ -56,7 +58,7 @@
             label10 = new Label();
             TreatmentCb = new ComboBox();
             PatientCb = new ComboBox();
-            dataGridView1 = new DataGridView();
+            AppointmentDGV = new DataGridView();
             textBox1 = new TextBox();
             backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             panel1.SuspendLayout();
@@ -68,7 +70,7 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)AppointmentDGV).BeginInit();
             SuspendLayout();
             // 
             // panel1
@@ -266,6 +268,8 @@
             // 
             // panel2
             // 
+            panel2.Controls.Add(button3);
+            panel2.Controls.Add(button2);
             panel2.Controls.Add(button1);
             panel2.Controls.Add(Time);
             panel2.Controls.Add(Date);
@@ -279,24 +283,58 @@
             panel2.Name = "panel2";
             panel2.Size = new Size(946, 234);
             panel2.TabIndex = 6;
+            panel2.Paint += panel2_Paint;
+            // 
+            // button3
+            // 
+            button3.BackColor = Color.Green;
+            button3.FlatAppearance.BorderSize = 0;
+            button3.FlatStyle = FlatStyle.Flat;
+            button3.Font = new Font("Century Gothic", 13.8F);
+            button3.ForeColor = Color.White;
+            button3.Location = new Point(419, 175);
+            button3.Name = "button3";
+            button3.Size = new Size(115, 33);
+            button3.TabIndex = 28;
+            button3.Text = "Edit";
+            button3.UseVisualStyleBackColor = false;
+            button3.Click += button3_Click;
+            // 
+            // button2
+            // 
+            button2.BackColor = Color.Red;
+            button2.FlatAppearance.BorderSize = 0;
+            button2.FlatStyle = FlatStyle.Flat;
+            button2.Font = new Font("Century Gothic", 13.8F);
+            button2.ForeColor = Color.White;
+            button2.Location = new Point(565, 175);
+            button2.Name = "button2";
+            button2.Size = new Size(115, 33);
+            button2.TabIndex = 27;
+            button2.Text = "Cancel";
+            button2.UseVisualStyleBackColor = false;
+            button2.Click += button2_Click_1;
             // 
             // button1
             // 
-            button1.BackColor = Color.MediumVioletRed;
+            button1.BackColor = Color.DodgerBlue;
             button1.FlatAppearance.BorderSize = 0;
             button1.FlatStyle = FlatStyle.Flat;
             button1.Font = new Font("Century Gothic", 13.8F);
             button1.ForeColor = Color.White;
-            button1.Location = new Point(386, 168);
+            button1.Location = new Point(254, 175);
             button1.Name = "button1";
-            button1.Size = new Size(142, 39);
+            button1.Size = new Size(136, 33);
             button1.TabIndex = 14;
             button1.Text = "Save";
             button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
             // 
             // Time
             // 
+            Time.CustomFormat = "";
             Time.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            Time.Format = DateTimePickerFormat.Time;
             Time.Location = new Point(634, 110);
             Time.Name = "Time";
             Time.Size = new Size(250, 32);
@@ -373,15 +411,16 @@
             PatientCb.Size = new Size(206, 35);
             PatientCb.TabIndex = 7;
             // 
-            // dataGridView1
+            // AppointmentDGV
             // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(261, 367);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(946, 303);
-            dataGridView1.TabIndex = 7;
-            dataGridView1.CellContentClick += dataGridView1_CellContentClick;
+            AppointmentDGV.BackgroundColor = Color.White;
+            AppointmentDGV.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            AppointmentDGV.Location = new Point(261, 367);
+            AppointmentDGV.Name = "AppointmentDGV";
+            AppointmentDGV.RowHeadersWidth = 51;
+            AppointmentDGV.Size = new Size(946, 303);
+            AppointmentDGV.TabIndex = 7;
+            AppointmentDGV.CellContentClick += dataGridView1_CellContentClick;
             // 
             // textBox1
             // 
@@ -399,7 +438,7 @@
             BackColor = Color.White;
             ClientSize = new Size(1265, 703);
             Controls.Add(textBox1);
-            Controls.Add(dataGridView1);
+            Controls.Add(AppointmentDGV);
             Controls.Add(panel2);
             Controls.Add(label9);
             Controls.Add(panel1);
@@ -407,6 +446,7 @@
             Name = "appointment";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "appointment";
+            Load += appointment_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox7).EndInit();
@@ -418,7 +458,7 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)AppointmentDGV).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -452,8 +492,10 @@
         private Label label12;
         private Label label11;
         private Button button1;
-        private DataGridView dataGridView1;
+        private DataGridView AppointmentDGV;
         private TextBox textBox1;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
+        private Button button3;
+        private Button button2;
     }
 }
