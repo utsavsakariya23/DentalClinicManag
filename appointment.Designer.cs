@@ -48,14 +48,14 @@
             label9 = new Label();
             panel2 = new Panel();
             button1 = new Button();
-            dateTimePicker2 = new DateTimePicker();
-            dateTimePicker1 = new DateTimePicker();
+            Time = new DateTimePicker();
+            Date = new DateTimePicker();
             label13 = new Label();
             label12 = new Label();
             label11 = new Label();
             label10 = new Label();
-            comboBox2 = new ComboBox();
-            comboBox1 = new ComboBox();
+            TreatmentCb = new ComboBox();
+            PatientCb = new ComboBox();
             dataGridView1 = new DataGridView();
             textBox1 = new TextBox();
             backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
@@ -267,14 +267,14 @@
             // panel2
             // 
             panel2.Controls.Add(button1);
-            panel2.Controls.Add(dateTimePicker2);
-            panel2.Controls.Add(dateTimePicker1);
+            panel2.Controls.Add(Time);
+            panel2.Controls.Add(Date);
             panel2.Controls.Add(label13);
             panel2.Controls.Add(label12);
             panel2.Controls.Add(label11);
             panel2.Controls.Add(label10);
-            panel2.Controls.Add(comboBox2);
-            panel2.Controls.Add(comboBox1);
+            panel2.Controls.Add(TreatmentCb);
+            panel2.Controls.Add(PatientCb);
             panel2.Location = new Point(261, 83);
             panel2.Name = "panel2";
             panel2.Size = new Size(946, 234);
@@ -294,22 +294,22 @@
             button1.Text = "Save";
             button1.UseVisualStyleBackColor = false;
             // 
-            // dateTimePicker2
+            // Time
             // 
-            dateTimePicker2.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dateTimePicker2.Location = new Point(634, 110);
-            dateTimePicker2.Name = "dateTimePicker2";
-            dateTimePicker2.Size = new Size(250, 32);
-            dateTimePicker2.TabIndex = 13;
+            Time.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            Time.Location = new Point(634, 110);
+            Time.Name = "Time";
+            Time.Size = new Size(250, 32);
+            Time.TabIndex = 13;
             // 
-            // dateTimePicker1
+            // Date
             // 
-            dateTimePicker1.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dateTimePicker1.Format = DateTimePickerFormat.Short;
-            dateTimePicker1.Location = new Point(634, 34);
-            dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(250, 32);
-            dateTimePicker1.TabIndex = 12;
+            Date.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            Date.Format = DateTimePickerFormat.Short;
+            Date.Location = new Point(634, 34);
+            Date.Name = "Date";
+            Date.Size = new Size(250, 32);
+            Date.TabIndex = 12;
             // 
             // label13
             // 
@@ -355,23 +355,23 @@
             label10.TabIndex = 9;
             label10.Text = "Patient";
             // 
-            // comboBox2
+            // TreatmentCb
             // 
-            comboBox2.Font = new Font("Century Gothic", 13.8F);
-            comboBox2.FormattingEnabled = true;
-            comboBox2.Location = new Point(219, 110);
-            comboBox2.Name = "comboBox2";
-            comboBox2.Size = new Size(206, 35);
-            comboBox2.TabIndex = 8;
+            TreatmentCb.Font = new Font("Century Gothic", 13.8F);
+            TreatmentCb.FormattingEnabled = true;
+            TreatmentCb.Location = new Point(219, 110);
+            TreatmentCb.Name = "TreatmentCb";
+            TreatmentCb.Size = new Size(206, 35);
+            TreatmentCb.TabIndex = 8;
             // 
-            // comboBox1
+            // PatientCb
             // 
-            comboBox1.Font = new Font("Century Gothic", 13.8F);
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(219, 34);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(206, 35);
-            comboBox1.TabIndex = 7;
+            PatientCb.Font = new Font("Century Gothic", 13.8F);
+            PatientCb.FormattingEnabled = true;
+            PatientCb.Location = new Point(219, 34);
+            PatientCb.Name = "PatientCb";
+            PatientCb.Size = new Size(206, 35);
+            PatientCb.TabIndex = 7;
             // 
             // dataGridView1
             // 
@@ -443,11 +443,11 @@
         private PictureBox pictureBox6;
         private Label label9;
         private Panel panel2;
-        private ComboBox comboBox1;
+        private ComboBox PatientCb;
         private Label label10;
-        private ComboBox comboBox2;
-        private DateTimePicker dateTimePicker2;
-        private DateTimePicker dateTimePicker1;
+        private ComboBox TreatmentCb;
+        private DateTimePicker Time;
+        private DateTimePicker Date;
         private Label label13;
         private Label label12;
         private Label label11;

@@ -30,11 +30,13 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(treatment));
             panel2 = new Panel();
+            button3 = new Button();
+            button2 = new Button();
             TreatDesc = new TextBox();
             label14 = new Label();
             TreatCost = new TextBox();
             label11 = new Label();
-            TretNameTb = new TextBox();
+            TreatNameTb = new TextBox();
             label10 = new Label();
             button1 = new Button();
             label9 = new Label();
@@ -55,7 +57,7 @@
             label1 = new Label();
             pictureBox1 = new PictureBox();
             textBox4 = new TextBox();
-            dataGridView1 = new DataGridView();
+            TreatmentDGV = new DataGridView();
             panel2.SuspendLayout();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox7).BeginInit();
@@ -65,22 +67,54 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)TreatmentDGV).BeginInit();
             SuspendLayout();
             // 
             // panel2
             // 
+            panel2.Controls.Add(button3);
+            panel2.Controls.Add(button2);
             panel2.Controls.Add(TreatDesc);
             panel2.Controls.Add(label14);
             panel2.Controls.Add(TreatCost);
             panel2.Controls.Add(label11);
-            panel2.Controls.Add(TretNameTb);
+            panel2.Controls.Add(TreatNameTb);
             panel2.Controls.Add(label10);
             panel2.Controls.Add(button1);
             panel2.Location = new Point(291, 83);
             panel2.Name = "panel2";
             panel2.Size = new Size(946, 218);
             panel2.TabIndex = 9;
+            // 
+            // button3
+            // 
+            button3.BackColor = Color.Green;
+            button3.FlatAppearance.BorderSize = 0;
+            button3.FlatStyle = FlatStyle.Flat;
+            button3.Font = new Font("Century Gothic", 13.8F);
+            button3.ForeColor = Color.White;
+            button3.Location = new Point(596, 156);
+            button3.Name = "button3";
+            button3.Size = new Size(115, 33);
+            button3.TabIndex = 26;
+            button3.Text = "Edit";
+            button3.UseVisualStyleBackColor = false;
+            button3.Click += button3_Click;
+            // 
+            // button2
+            // 
+            button2.BackColor = Color.Red;
+            button2.FlatAppearance.BorderSize = 0;
+            button2.FlatStyle = FlatStyle.Flat;
+            button2.Font = new Font("Century Gothic", 13.8F);
+            button2.ForeColor = Color.White;
+            button2.Location = new Point(729, 156);
+            button2.Name = "button2";
+            button2.Size = new Size(115, 33);
+            button2.TabIndex = 25;
+            button2.Text = "Delete";
+            button2.UseVisualStyleBackColor = false;
+            button2.Click += button2_Click;
             // 
             // TreatDesc
             // 
@@ -122,13 +156,13 @@
             label11.TabIndex = 18;
             label11.Text = "Cost";
             // 
-            // TretNameTb
+            // TreatNameTb
             // 
-            TretNameTb.Font = new Font("Century Gothic", 13.8F);
-            TretNameTb.Location = new Point(175, 24);
-            TretNameTb.Name = "TretNameTb";
-            TretNameTb.Size = new Size(224, 36);
-            TretNameTb.TabIndex = 17;
+            TreatNameTb.Font = new Font("Century Gothic", 13.8F);
+            TreatNameTb.Location = new Point(175, 24);
+            TreatNameTb.Name = "TreatNameTb";
+            TreatNameTb.Size = new Size(224, 36);
+            TreatNameTb.TabIndex = 17;
             // 
             // label10
             // 
@@ -148,12 +182,13 @@
             button1.FlatStyle = FlatStyle.Flat;
             button1.Font = new Font("Century Gothic", 13.8F);
             button1.ForeColor = Color.White;
-            button1.Location = new Point(446, 161);
+            button1.Location = new Point(434, 156);
             button1.Name = "button1";
-            button1.Size = new Size(142, 39);
+            button1.Size = new Size(142, 33);
             button1.TabIndex = 14;
             button1.Text = "Save";
             button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
             // 
             // label9
             // 
@@ -357,22 +392,25 @@
             textBox4.TabIndex = 11;
             textBox4.Text = "Filter By Name";
             // 
-            // dataGridView1
+            // TreatmentDGV
             // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(291, 357);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(946, 303);
-            dataGridView1.TabIndex = 10;
+            TreatmentDGV.BackgroundColor = Color.White;
+            TreatmentDGV.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            TreatmentDGV.Location = new Point(291, 357);
+            TreatmentDGV.Name = "TreatmentDGV";
+            TreatmentDGV.RowHeadersWidth = 51;
+            TreatmentDGV.Size = new Size(946, 303);
+            TreatmentDGV.TabIndex = 10;
+            TreatmentDGV.CellContentClick += TreatmentDVG_CellContentClick;
             // 
             // treatment
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.White;
             ClientSize = new Size(1266, 714);
             Controls.Add(textBox4);
-            Controls.Add(dataGridView1);
+            Controls.Add(TreatmentDGV);
             Controls.Add(panel2);
             Controls.Add(label9);
             Controls.Add(panel1);
@@ -381,6 +419,7 @@
             Name = "treatment";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "treatment";
+            Load += treatment_Load;
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
             panel1.ResumeLayout(false);
@@ -392,7 +431,7 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)TreatmentDGV).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -420,11 +459,13 @@
         private PictureBox pictureBox1;
         private TextBox TreatCost;
         private Label label11;
-        private TextBox TretNameTb;
+        private TextBox TreatNameTb;
         private Label label10;
         private TextBox TreatDesc;
         private Label label14;
         private TextBox textBox4;
-        private DataGridView dataGridView1;
+        private DataGridView TreatmentDGV;
+        private Button button3;
+        private Button button2;
     }
 }
