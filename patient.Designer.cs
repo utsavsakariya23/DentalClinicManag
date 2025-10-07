@@ -47,21 +47,23 @@
             pictureBox1 = new PictureBox();
             label9 = new Label();
             panel2 = new Panel();
+            button2 = new Button();
+            AllergyTb = new TextBox();
+            label13 = new Label();
+            label15 = new Label();
+            AddressTb = new TextBox();
+            label14 = new Label();
+            PatPhoneTb = new TextBox();
+            label11 = new Label();
+            PatNameTb = new TextBox();
             button1 = new Button();
-            dateTimePicker1 = new DateTimePicker();
+            DOBDate = new DateTimePicker();
             label12 = new Label();
             label10 = new Label();
-            comboBox1 = new ComboBox();
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
-            label11 = new Label();
-            textBox3 = new TextBox();
-            label14 = new Label();
-            label15 = new Label();
-            textBox4 = new TextBox();
-            label13 = new Label();
+            GenCb = new ComboBox();
             textBox5 = new TextBox();
-            dataGridView1 = new DataGridView();
+            PatientDGV = new DataGridView();
+            button3 = new Button();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox7).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox6).BeginInit();
@@ -71,7 +73,7 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)PatientDGV).BeginInit();
             SuspendLayout();
             // 
             // panel1
@@ -270,23 +272,118 @@
             // 
             // panel2
             // 
-            panel2.Controls.Add(textBox4);
+            panel2.Controls.Add(button3);
+            panel2.Controls.Add(button2);
+            panel2.Controls.Add(AllergyTb);
             panel2.Controls.Add(label13);
             panel2.Controls.Add(label15);
-            panel2.Controls.Add(textBox3);
+            panel2.Controls.Add(AddressTb);
             panel2.Controls.Add(label14);
-            panel2.Controls.Add(textBox2);
+            panel2.Controls.Add(PatPhoneTb);
             panel2.Controls.Add(label11);
-            panel2.Controls.Add(textBox1);
+            panel2.Controls.Add(PatNameTb);
             panel2.Controls.Add(button1);
-            panel2.Controls.Add(dateTimePicker1);
+            panel2.Controls.Add(DOBDate);
             panel2.Controls.Add(label12);
             panel2.Controls.Add(label10);
-            panel2.Controls.Add(comboBox1);
+            panel2.Controls.Add(GenCb);
             panel2.Location = new Point(257, 71);
             panel2.Name = "panel2";
             panel2.Size = new Size(946, 272);
             panel2.TabIndex = 7;
+            // 
+            // button2
+            // 
+            button2.BackColor = Color.Red;
+            button2.FlatAppearance.BorderSize = 0;
+            button2.FlatStyle = FlatStyle.Flat;
+            button2.Font = new Font("Century Gothic", 13.8F);
+            button2.ForeColor = Color.White;
+            button2.Location = new Point(623, 219);
+            button2.Name = "button2";
+            button2.Size = new Size(115, 39);
+            button2.TabIndex = 23;
+            button2.Text = "Delete";
+            button2.UseVisualStyleBackColor = false;
+            button2.Click += button2_Click;
+            // 
+            // AllergyTb
+            // 
+            AllergyTb.Font = new Font("Century Gothic", 13.8F);
+            AllergyTb.Location = new Point(634, 128);
+            AllergyTb.Multiline = true;
+            AllergyTb.Name = "AllergyTb";
+            AllergyTb.Size = new Size(250, 79);
+            AllergyTb.TabIndex = 22;
+            // 
+            // label13
+            // 
+            label13.AutoSize = true;
+            label13.Font = new Font("Bookman Old Style", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label13.ForeColor = Color.Crimson;
+            label13.Location = new Point(527, 136);
+            label13.Name = "label13";
+            label13.Size = new Size(94, 23);
+            label13.TabIndex = 21;
+            label13.Text = "Allergies";
+            // 
+            // label15
+            // 
+            label15.AutoSize = true;
+            label15.Font = new Font("Bookman Old Style", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label15.ForeColor = Color.Crimson;
+            label15.Location = new Point(527, 84);
+            label15.Name = "label15";
+            label15.Size = new Size(82, 23);
+            label15.TabIndex = 20;
+            label15.Text = "Gender";
+            // 
+            // AddressTb
+            // 
+            AddressTb.Font = new Font("Century Gothic", 13.8F);
+            AddressTb.Location = new Point(118, 141);
+            AddressTb.Multiline = true;
+            AddressTb.Name = "AddressTb";
+            AddressTb.Size = new Size(224, 79);
+            AddressTb.TabIndex = 19;
+            // 
+            // label14
+            // 
+            label14.AutoSize = true;
+            label14.Font = new Font("Bookman Old Style", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label14.ForeColor = Color.Crimson;
+            label14.Location = new Point(23, 154);
+            label14.Name = "label14";
+            label14.Size = new Size(88, 23);
+            label14.TabIndex = 18;
+            label14.Text = "Address";
+            // 
+            // PatPhoneTb
+            // 
+            PatPhoneTb.Font = new Font("Century Gothic", 13.8F);
+            PatPhoneTb.Location = new Point(118, 83);
+            PatPhoneTb.Name = "PatPhoneTb";
+            PatPhoneTb.Size = new Size(224, 36);
+            PatPhoneTb.TabIndex = 17;
+            // 
+            // label11
+            // 
+            label11.AutoSize = true;
+            label11.Font = new Font("Bookman Old Style", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label11.ForeColor = Color.Crimson;
+            label11.Location = new Point(23, 96);
+            label11.Name = "label11";
+            label11.Size = new Size(70, 23);
+            label11.TabIndex = 16;
+            label11.Text = "Phone";
+            // 
+            // PatNameTb
+            // 
+            PatNameTb.Font = new Font("Century Gothic", 13.8F);
+            PatNameTb.Location = new Point(118, 16);
+            PatNameTb.Name = "PatNameTb";
+            PatNameTb.Size = new Size(224, 36);
+            PatNameTb.TabIndex = 15;
             // 
             // button1
             // 
@@ -295,21 +392,22 @@
             button1.FlatStyle = FlatStyle.Flat;
             button1.Font = new Font("Century Gothic", 13.8F);
             button1.ForeColor = Color.White;
-            button1.Location = new Point(387, 219);
+            button1.Location = new Point(355, 219);
             button1.Name = "button1";
-            button1.Size = new Size(142, 39);
+            button1.Size = new Size(115, 39);
             button1.TabIndex = 14;
             button1.Text = "Save";
             button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
             // 
-            // dateTimePicker1
+            // DOBDate
             // 
-            dateTimePicker1.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dateTimePicker1.Format = DateTimePickerFormat.Short;
-            dateTimePicker1.Location = new Point(634, 20);
-            dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(250, 32);
-            dateTimePicker1.TabIndex = 12;
+            DOBDate.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            DOBDate.Format = DateTimePickerFormat.Short;
+            DOBDate.Location = new Point(634, 20);
+            DOBDate.Name = "DOBDate";
+            DOBDate.Size = new Size(250, 32);
+            DOBDate.TabIndex = 12;
             // 
             // label12
             // 
@@ -333,93 +431,15 @@
             label10.TabIndex = 9;
             label10.Text = "Name";
             // 
-            // comboBox1
+            // GenCb
             // 
-            comboBox1.Font = new Font("Century Gothic", 13.8F);
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Items.AddRange(new object[] { "Male", "Female" });
-            comboBox1.Location = new Point(634, 72);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(250, 35);
-            comboBox1.TabIndex = 7;
-            // 
-            // textBox1
-            // 
-            textBox1.Font = new Font("Century Gothic", 13.8F);
-            textBox1.Location = new Point(118, 16);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(224, 36);
-            textBox1.TabIndex = 15;
-            // 
-            // textBox2
-            // 
-            textBox2.Font = new Font("Century Gothic", 13.8F);
-            textBox2.Location = new Point(118, 83);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(224, 36);
-            textBox2.TabIndex = 17;
-            // 
-            // label11
-            // 
-            label11.AutoSize = true;
-            label11.Font = new Font("Bookman Old Style", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label11.ForeColor = Color.Crimson;
-            label11.Location = new Point(23, 96);
-            label11.Name = "label11";
-            label11.Size = new Size(70, 23);
-            label11.TabIndex = 16;
-            label11.Text = "Phone";
-            // 
-            // textBox3
-            // 
-            textBox3.Font = new Font("Century Gothic", 13.8F);
-            textBox3.Location = new Point(118, 141);
-            textBox3.Multiline = true;
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(224, 79);
-            textBox3.TabIndex = 19;
-            // 
-            // label14
-            // 
-            label14.AutoSize = true;
-            label14.Font = new Font("Bookman Old Style", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label14.ForeColor = Color.Crimson;
-            label14.Location = new Point(23, 154);
-            label14.Name = "label14";
-            label14.Size = new Size(70, 23);
-            label14.TabIndex = 18;
-            label14.Text = "Phone";
-            // 
-            // label15
-            // 
-            label15.AutoSize = true;
-            label15.Font = new Font("Bookman Old Style", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label15.ForeColor = Color.Crimson;
-            label15.Location = new Point(527, 84);
-            label15.Name = "label15";
-            label15.Size = new Size(82, 23);
-            label15.TabIndex = 20;
-            label15.Text = "Gender";
-            // 
-            // textBox4
-            // 
-            textBox4.Font = new Font("Century Gothic", 13.8F);
-            textBox4.Location = new Point(634, 128);
-            textBox4.Multiline = true;
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(250, 79);
-            textBox4.TabIndex = 22;
-            // 
-            // label13
-            // 
-            label13.AutoSize = true;
-            label13.Font = new Font("Bookman Old Style", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label13.ForeColor = Color.Crimson;
-            label13.Location = new Point(527, 136);
-            label13.Name = "label13";
-            label13.Size = new Size(94, 23);
-            label13.TabIndex = 21;
-            label13.Text = "Allergies";
+            GenCb.Font = new Font("Century Gothic", 13.8F);
+            GenCb.FormattingEnabled = true;
+            GenCb.Items.AddRange(new object[] { "Male", "Female" });
+            GenCb.Location = new Point(634, 72);
+            GenCb.Name = "GenCb";
+            GenCb.Size = new Size(250, 35);
+            GenCb.TabIndex = 7;
             // 
             // textBox5
             // 
@@ -430,14 +450,31 @@
             textBox5.TabIndex = 18;
             textBox5.Text = "Filter By Patient Name";
             // 
-            // dataGridView1
+            // PatientDGV
             // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(257, 388);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(946, 303);
-            dataGridView1.TabIndex = 17;
+            PatientDGV.BackgroundColor = Color.White;
+            PatientDGV.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            PatientDGV.Location = new Point(257, 388);
+            PatientDGV.Name = "PatientDGV";
+            PatientDGV.RowHeadersWidth = 51;
+            PatientDGV.Size = new Size(946, 303);
+            PatientDGV.TabIndex = 17;
+            PatientDGV.CellContentClick += PatientDGV_CellContentClick;
+            // 
+            // button3
+            // 
+            button3.BackColor = Color.Green;
+            button3.FlatAppearance.BorderSize = 0;
+            button3.FlatStyle = FlatStyle.Flat;
+            button3.Font = new Font("Century Gothic", 13.8F);
+            button3.ForeColor = Color.White;
+            button3.Location = new Point(490, 219);
+            button3.Name = "button3";
+            button3.Size = new Size(115, 39);
+            button3.TabIndex = 24;
+            button3.Text = "Edit";
+            button3.UseVisualStyleBackColor = false;
+            button3.Click += button3_Click;
             // 
             // patient
             // 
@@ -447,13 +484,14 @@
             ClientSize = new Size(1266, 714);
             Controls.Add(textBox5);
             Controls.Add(panel2);
-            Controls.Add(dataGridView1);
+            Controls.Add(PatientDGV);
             Controls.Add(label9);
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;
             Name = "patient";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "patient";
+            Load += patient_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox7).EndInit();
@@ -465,7 +503,7 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)PatientDGV).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -491,19 +529,21 @@
         private Label label9;
         private Panel panel2;
         private Button button1;
-        private DateTimePicker dateTimePicker1;
+        private DateTimePicker DOBDate;
         private Label label12;
         private Label label10;
-        private ComboBox comboBox1;
-        private TextBox textBox3;
+        private ComboBox GenCb;
+        private TextBox AddressTb;
         private Label label14;
-        private TextBox textBox2;
+        private TextBox PatPhoneTb;
         private Label label11;
-        private TextBox textBox1;
-        private TextBox textBox4;
+        private TextBox PatNameTb;
+        private TextBox AllergyTb;
         private Label label13;
         private Label label15;
         private TextBox textBox5;
-        private DataGridView dataGridView1;
+        private DataGridView PatientDGV;
+        private Button button2;
+        private Button button3;
     }
 }

@@ -30,6 +30,12 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(treatment));
             panel2 = new Panel();
+            TreatDesc = new TextBox();
+            label14 = new Label();
+            TreatCost = new TextBox();
+            label11 = new Label();
+            TretNameTb = new TextBox();
+            label10 = new Label();
             button1 = new Button();
             label9 = new Label();
             panel1 = new Panel();
@@ -48,12 +54,6 @@
             label2 = new Label();
             label1 = new Label();
             pictureBox1 = new PictureBox();
-            textBox1 = new TextBox();
-            label10 = new Label();
-            textBox2 = new TextBox();
-            label11 = new Label();
-            textBox3 = new TextBox();
-            label14 = new Label();
             textBox4 = new TextBox();
             dataGridView1 = new DataGridView();
             panel2.SuspendLayout();
@@ -70,17 +70,76 @@
             // 
             // panel2
             // 
-            panel2.Controls.Add(textBox3);
+            panel2.Controls.Add(TreatDesc);
             panel2.Controls.Add(label14);
-            panel2.Controls.Add(textBox2);
+            panel2.Controls.Add(TreatCost);
             panel2.Controls.Add(label11);
-            panel2.Controls.Add(textBox1);
+            panel2.Controls.Add(TretNameTb);
             panel2.Controls.Add(label10);
             panel2.Controls.Add(button1);
             panel2.Location = new Point(291, 83);
             panel2.Name = "panel2";
             panel2.Size = new Size(946, 218);
             panel2.TabIndex = 9;
+            // 
+            // TreatDesc
+            // 
+            TreatDesc.Font = new Font("Century Gothic", 13.8F);
+            TreatDesc.Location = new Point(175, 102);
+            TreatDesc.Multiline = true;
+            TreatDesc.Name = "TreatDesc";
+            TreatDesc.Size = new Size(224, 79);
+            TreatDesc.TabIndex = 21;
+            // 
+            // label14
+            // 
+            label14.AutoSize = true;
+            label14.Font = new Font("Bookman Old Style", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label14.ForeColor = Color.Crimson;
+            label14.Location = new Point(28, 107);
+            label14.Name = "label14";
+            label14.Size = new Size(141, 26);
+            label14.TabIndex = 20;
+            label14.Text = "Description";
+            // 
+            // TreatCost
+            // 
+            TreatCost.Font = new Font("Century Gothic", 13.8F);
+            TreatCost.Location = new Point(609, 29);
+            TreatCost.Name = "TreatCost";
+            TreatCost.Size = new Size(224, 36);
+            TreatCost.TabIndex = 19;
+            TreatCost.TextChanged += textBox2_TextChanged;
+            // 
+            // label11
+            // 
+            label11.AutoSize = true;
+            label11.Font = new Font("Bookman Old Style", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label11.ForeColor = Color.Crimson;
+            label11.Location = new Point(516, 39);
+            label11.Name = "label11";
+            label11.Size = new Size(63, 26);
+            label11.TabIndex = 18;
+            label11.Text = "Cost";
+            // 
+            // TretNameTb
+            // 
+            TretNameTb.Font = new Font("Century Gothic", 13.8F);
+            TretNameTb.Location = new Point(175, 24);
+            TretNameTb.Name = "TretNameTb";
+            TretNameTb.Size = new Size(224, 36);
+            TretNameTb.TabIndex = 17;
+            // 
+            // label10
+            // 
+            label10.AutoSize = true;
+            label10.Font = new Font("Bookman Old Style", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label10.ForeColor = Color.Crimson;
+            label10.Location = new Point(28, 34);
+            label10.Name = "label10";
+            label10.Size = new Size(76, 26);
+            label10.TabIndex = 16;
+            label10.Text = "Name";
             // 
             // button1
             // 
@@ -289,66 +348,6 @@
             pictureBox1.TabIndex = 2;
             pictureBox1.TabStop = false;
             // 
-            // textBox1
-            // 
-            textBox1.Font = new Font("Century Gothic", 13.8F);
-            textBox1.Location = new Point(175, 24);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(224, 36);
-            textBox1.TabIndex = 17;
-            // 
-            // label10
-            // 
-            label10.AutoSize = true;
-            label10.Font = new Font("Bookman Old Style", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label10.ForeColor = Color.Crimson;
-            label10.Location = new Point(28, 34);
-            label10.Name = "label10";
-            label10.Size = new Size(76, 26);
-            label10.TabIndex = 16;
-            label10.Text = "Name";
-            // 
-            // textBox2
-            // 
-            textBox2.Font = new Font("Century Gothic", 13.8F);
-            textBox2.Location = new Point(609, 29);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(224, 36);
-            textBox2.TabIndex = 19;
-            textBox2.TextChanged += textBox2_TextChanged;
-            // 
-            // label11
-            // 
-            label11.AutoSize = true;
-            label11.Font = new Font("Bookman Old Style", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label11.ForeColor = Color.Crimson;
-            label11.Location = new Point(516, 39);
-            label11.Name = "label11";
-            label11.Size = new Size(63, 26);
-            label11.TabIndex = 18;
-            label11.Text = "Cost";
-            //label11.Click += this.label11_Click;
-            // 
-            // textBox3
-            // 
-            textBox3.Font = new Font("Century Gothic", 13.8F);
-            textBox3.Location = new Point(175, 102);
-            textBox3.Multiline = true;
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(224, 79);
-            textBox3.TabIndex = 21;
-            // 
-            // label14
-            // 
-            label14.AutoSize = true;
-            label14.Font = new Font("Bookman Old Style", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label14.ForeColor = Color.Crimson;
-            label14.Location = new Point(28, 107);
-            label14.Name = "label14";
-            label14.Size = new Size(141, 26);
-            label14.TabIndex = 20;
-            label14.Text = "Description";
-            // 
             // textBox4
             // 
             textBox4.ForeColor = Color.DodgerBlue;
@@ -419,11 +418,11 @@
         private Label label2;
         private Label label1;
         private PictureBox pictureBox1;
-        private TextBox textBox2;
+        private TextBox TreatCost;
         private Label label11;
-        private TextBox textBox1;
+        private TextBox TretNameTb;
         private Label label10;
-        private TextBox textBox3;
+        private TextBox TreatDesc;
         private Label label14;
         private TextBox textBox4;
         private DataGridView dataGridView1;
