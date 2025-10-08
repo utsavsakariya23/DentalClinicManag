@@ -410,6 +410,7 @@
             PatientCb.Name = "PatientCb";
             PatientCb.Size = new Size(206, 35);
             PatientCb.TabIndex = 7;
+            PatientCb.SelectedIndexChanged += PatientCb_SelectedIndexChanged;
             // 
             // AppointmentDGV
             // 

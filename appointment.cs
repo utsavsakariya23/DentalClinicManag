@@ -183,5 +183,10 @@ namespace DentalClinicManag
                 }
             }
         }
+
+        private void PatientCb_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

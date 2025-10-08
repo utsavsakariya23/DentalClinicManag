@@ -46,22 +46,22 @@
             label1 = new Label();
             pictureBox1 = new PictureBox();
             panel2 = new Panel();
-            textBox4 = new TextBox();
+            button3 = new Button();
+            button2 = new Button();
+            TreatmentTb = new TextBox();
+            QtyTb = new TextBox();
+            TreatCostTb = new TextBox();
             label13 = new Label();
             label15 = new Label();
-            textBox3 = new TextBox();
+            MedicinesTb = new TextBox();
             label14 = new Label();
             label11 = new Label();
-            textBox1 = new TextBox();
             button1 = new Button();
             label12 = new Label();
-            label10 = new Label();
-            comboBox1 = new ComboBox();
+            PatientCb = new ComboBox();
             label9 = new Label();
-            comboBox2 = new ComboBox();
-            textBox2 = new TextBox();
             textBox5 = new TextBox();
-            dataGridView1 = new DataGridView();
+            PrescriptionDGV = new DataGridView();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox7).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox6).BeginInit();
@@ -71,7 +71,7 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)PrescriptionDGV).BeginInit();
             SuspendLayout();
             // 
             // panel1
@@ -258,38 +258,85 @@
             // 
             // panel2
             // 
-            panel2.Controls.Add(textBox2);
-            panel2.Controls.Add(comboBox2);
-            panel2.Controls.Add(textBox4);
+            panel2.Controls.Add(button3);
+            panel2.Controls.Add(button2);
+            panel2.Controls.Add(TreatmentTb);
+            panel2.Controls.Add(QtyTb);
+            panel2.Controls.Add(TreatCostTb);
             panel2.Controls.Add(label13);
             panel2.Controls.Add(label15);
-            panel2.Controls.Add(textBox3);
+            panel2.Controls.Add(MedicinesTb);
             panel2.Controls.Add(label14);
             panel2.Controls.Add(label11);
-            panel2.Controls.Add(textBox1);
             panel2.Controls.Add(button1);
             panel2.Controls.Add(label12);
-            panel2.Controls.Add(label10);
-            panel2.Controls.Add(comboBox1);
+            panel2.Controls.Add(PatientCb);
             panel2.Location = new Point(256, 71);
             panel2.Name = "panel2";
             panel2.Size = new Size(946, 272);
             panel2.TabIndex = 9;
             // 
-            // textBox4
+            // button3
             // 
-            textBox4.Font = new Font("Century Gothic", 13.8F);
-            textBox4.Location = new Point(651, 78);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(250, 36);
-            textBox4.TabIndex = 22;
+            button3.BackColor = Color.Green;
+            button3.FlatAppearance.BorderSize = 0;
+            button3.FlatStyle = FlatStyle.Flat;
+            button3.Font = new Font("Century Gothic", 13.8F);
+            button3.ForeColor = Color.White;
+            button3.Location = new Point(411, 213);
+            button3.Name = "button3";
+            button3.Size = new Size(115, 33);
+            button3.TabIndex = 30;
+            button3.Text = "Edit";
+            button3.UseVisualStyleBackColor = false;
+            button3.Click += button3_Click;
+            // 
+            // button2
+            // 
+            button2.BackColor = Color.Red;
+            button2.FlatAppearance.BorderSize = 0;
+            button2.FlatStyle = FlatStyle.Flat;
+            button2.Font = new Font("Century Gothic", 13.8F);
+            button2.ForeColor = Color.White;
+            button2.Location = new Point(544, 213);
+            button2.Name = "button2";
+            button2.Size = new Size(115, 33);
+            button2.TabIndex = 29;
+            button2.Text = "Delete";
+            button2.UseVisualStyleBackColor = false;
+            button2.Click += button2_Click;
+            // 
+            // TreatmentTb
+            // 
+            TreatmentTb.Font = new Font("Century Gothic", 13.8F);
+            TreatmentTb.Location = new Point(661, 81);
+            TreatmentTb.Name = "TreatmentTb";
+            TreatmentTb.Size = new Size(224, 36);
+            TreatmentTb.TabIndex = 25;
+            TreatmentTb.TextChanged += TreatmentTb_TextChanged;
+            // 
+            // QtyTb
+            // 
+            QtyTb.Font = new Font("Century Gothic", 13.8F);
+            QtyTb.Location = new Point(150, 14);
+            QtyTb.Name = "QtyTb";
+            QtyTb.Size = new Size(250, 36);
+            QtyTb.TabIndex = 24;
+            // 
+            // TreatCostTb
+            // 
+            TreatCostTb.Font = new Font("Century Gothic", 13.8F);
+            TreatCostTb.Location = new Point(661, 146);
+            TreatCostTb.Name = "TreatCostTb";
+            TreatCostTb.Size = new Size(224, 36);
+            TreatCostTb.TabIndex = 22;
             // 
             // label13
             // 
             label13.AutoSize = true;
             label13.Font = new Font("Bookman Old Style", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label13.ForeColor = Color.Crimson;
-            label13.Location = new Point(527, 167);
+            label13.Location = new Point(26, 27);
             label13.Name = "label13";
             label13.Size = new Size(98, 23);
             label13.TabIndex = 21;
@@ -300,27 +347,27 @@
             label15.AutoSize = true;
             label15.Font = new Font("Bookman Old Style", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label15.ForeColor = Color.Crimson;
-            label15.Location = new Point(527, 91);
+            label15.Location = new Point(537, 159);
             label15.Name = "label15";
             label15.Size = new Size(54, 23);
             label15.TabIndex = 20;
             label15.Text = "Cost";
             // 
-            // textBox3
+            // MedicinesTb
             // 
-            textBox3.Font = new Font("Century Gothic", 13.8F);
-            textBox3.Location = new Point(150, 146);
-            textBox3.Multiline = true;
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(224, 79);
-            textBox3.TabIndex = 19;
+            MedicinesTb.Font = new Font("Century Gothic", 13.8F);
+            MedicinesTb.Location = new Point(150, 78);
+            MedicinesTb.Multiline = true;
+            MedicinesTb.Name = "MedicinesTb";
+            MedicinesTb.Size = new Size(224, 79);
+            MedicinesTb.TabIndex = 19;
             // 
             // label14
             // 
             label14.AutoSize = true;
             label14.Font = new Font("Bookman Old Style", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label14.ForeColor = Color.Crimson;
-            label14.Location = new Point(23, 154);
+            label14.Location = new Point(23, 86);
             label14.Name = "label14";
             label14.Size = new Size(107, 23);
             label14.TabIndex = 18;
@@ -331,19 +378,11 @@
             label11.AutoSize = true;
             label11.Font = new Font("Bookman Old Style", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label11.ForeColor = Color.Crimson;
-            label11.Location = new Point(23, 96);
+            label11.Location = new Point(534, 86);
             label11.Name = "label11";
             label11.Size = new Size(112, 23);
             label11.TabIndex = 16;
             label11.Text = "Treatment";
-            // 
-            // textBox1
-            // 
-            textBox1.Font = new Font("Century Gothic", 13.8F);
-            textBox1.Location = new Point(150, 16);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(224, 36);
-            textBox1.TabIndex = 15;
             // 
             // button1
             // 
@@ -352,44 +391,34 @@
             button1.FlatStyle = FlatStyle.Flat;
             button1.Font = new Font("Century Gothic", 13.8F);
             button1.ForeColor = Color.White;
-            button1.Location = new Point(406, 230);
+            button1.Location = new Point(246, 213);
             button1.Name = "button1";
-            button1.Size = new Size(142, 39);
+            button1.Size = new Size(142, 33);
             button1.TabIndex = 14;
             button1.Text = "Save";
             button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
             // 
             // label12
             // 
             label12.AutoSize = true;
             label12.Font = new Font("Bookman Old Style", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label12.ForeColor = Color.Crimson;
-            label12.Location = new Point(527, 29);
+            label12.Location = new Point(537, 27);
             label12.Name = "label12";
             label12.Size = new Size(80, 23);
             label12.TabIndex = 11;
             label12.Text = "Patient";
             // 
-            // label10
+            // PatientCb
             // 
-            label10.AutoSize = true;
-            label10.Font = new Font("Bookman Old Style", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label10.ForeColor = Color.Crimson;
-            label10.Location = new Point(23, 29);
-            label10.Name = "label10";
-            label10.Size = new Size(66, 23);
-            label10.TabIndex = 9;
-            label10.Text = "Name";
-            // 
-            // comboBox1
-            // 
-            comboBox1.Font = new Font("Century Gothic", 13.8F);
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Items.AddRange(new object[] { "Male", "Female" });
-            comboBox1.Location = new Point(651, 21);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(250, 35);
-            comboBox1.TabIndex = 7;
+            PatientCb.Font = new Font("Century Gothic", 13.8F);
+            PatientCb.FormattingEnabled = true;
+            PatientCb.Location = new Point(661, 19);
+            PatientCb.Name = "PatientCb";
+            PatientCb.Size = new Size(224, 35);
+            PatientCb.TabIndex = 7;
+            PatientCb.SelectionChangeCommitted += PatientCb_SelectionChangeCommitted;
             // 
             // label9
             // 
@@ -402,23 +431,6 @@
             label9.TabIndex = 8;
             label9.Text = "Prescription";
             // 
-            // comboBox2
-            // 
-            comboBox2.Font = new Font("Century Gothic", 13.8F);
-            comboBox2.FormattingEnabled = true;
-            comboBox2.Location = new Point(150, 88);
-            comboBox2.Name = "comboBox2";
-            comboBox2.Size = new Size(224, 35);
-            comboBox2.TabIndex = 23;
-            // 
-            // textBox2
-            // 
-            textBox2.Font = new Font("Century Gothic", 13.8F);
-            textBox2.Location = new Point(651, 154);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(250, 36);
-            textBox2.TabIndex = 24;
-            // 
             // textBox5
             // 
             textBox5.ForeColor = Color.DodgerBlue;
@@ -428,14 +440,17 @@
             textBox5.TabIndex = 11;
             textBox5.Text = "Filter By Patient Name";
             // 
-            // dataGridView1
+            // PrescriptionDGV
             // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(256, 399);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(946, 292);
-            dataGridView1.TabIndex = 10;
+            PrescriptionDGV.BackgroundColor = Color.White;
+            PrescriptionDGV.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            PrescriptionDGV.Location = new Point(256, 399);
+            PrescriptionDGV.Name = "PrescriptionDGV";
+            PrescriptionDGV.RowHeadersWidth = 51;
+            PrescriptionDGV.Size = new Size(946, 292);
+            PrescriptionDGV.TabIndex = 10;
+            PrescriptionDGV.CellClick += PrescriptionDGV_CellClick;
+            PrescriptionDGV.CellContentClick += PrescriptionDGV_CellContentClick;
             // 
             // prescription
             // 
@@ -444,7 +459,7 @@
             BackColor = Color.White;
             ClientSize = new Size(1266, 714);
             Controls.Add(textBox5);
-            Controls.Add(dataGridView1);
+            Controls.Add(PrescriptionDGV);
             Controls.Add(panel2);
             Controls.Add(label9);
             Controls.Add(panel1);
@@ -452,6 +467,7 @@
             Name = "prescription";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "prescription";
+            Load += prescription_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox7).EndInit();
@@ -463,7 +479,7 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)PrescriptionDGV).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -487,21 +503,21 @@
         private Label label1;
         private PictureBox pictureBox1;
         private Panel panel2;
-        private TextBox textBox4;
+        private TextBox TreatCostTb;
         private Label label13;
         private Label label15;
-        private TextBox textBox3;
+        private TextBox MedicinesTb;
         private Label label14;
         private Label label11;
-        private TextBox textBox1;
         private Button button1;
         private Label label12;
-        private Label label10;
-        private ComboBox comboBox1;
+        private ComboBox PatientCb;
         private Label label9;
-        private ComboBox comboBox2;
-        private TextBox textBox2;
+        private TextBox QtyTb;
         private TextBox textBox5;
-        private DataGridView dataGridView1;
+        private DataGridView PrescriptionDGV;
+        private TextBox TreatmentTb;
+        private Button button3;
+        private Button button2;
     }
 }
