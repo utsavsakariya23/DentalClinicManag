@@ -20,7 +20,9 @@ namespace DentalClinicManag
 
         private void label4_Click(object sender, EventArgs e)
         {
-
+            treatment treat = new treatment();
+            treat.Show();
+            this.Hide();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -50,6 +52,15 @@ namespace DentalClinicManag
         {
             MyPatient Pat = new MyPatient();
             string query = "select * from PatientTbl";
+            DataSet ds = Pat.ShowPatient(query);
+            PatientDGV.DataSource = ds.Tables[0];
+        }
+
+        void filter()
+        {
+            MyPatient Pat = new MyPatient();
+
+            string query = "select * from PatientTbl where PatName like '%" + SearchTb.Text + "%' ";
             DataSet ds = Pat.ShowPatient(query);
             PatientDGV.DataSource = ds.Tables[0];
         }
@@ -137,6 +148,33 @@ namespace DentalClinicManag
             }
 
 
+        }
+
+        private void SearchTb_TextChanged(object sender, EventArgs e)
+        {
+            filter();
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+            appointment app = new appointment();
+            app.Show();
+            this.Hide();
+
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+            prescription pre = new prescription();
+            pre.Show();
+            this.Hide();
+        }
+
+        private void label8_Click(object sender, EventArgs e)
+        {
+            login log = new login();
+            log.Show();
+            this.Hide();
         }
     }
 }

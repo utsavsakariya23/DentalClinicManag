@@ -32,16 +32,6 @@
             panel1 = new Panel();
             label8 = new Label();
             pictureBox7 = new PictureBox();
-            label7 = new Label();
-            pictureBox6 = new PictureBox();
-            label6 = new Label();
-            pictureBox5 = new PictureBox();
-            label5 = new Label();
-            pictureBox4 = new PictureBox();
-            label4 = new Label();
-            pictureBox3 = new PictureBox();
-            label3 = new Label();
-            pictureBox2 = new PictureBox();
             label2 = new Label();
             label1 = new Label();
             pictureBox1 = new PictureBox();
@@ -60,11 +50,6 @@
             UserDGV = new DataGridView();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox7).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox6).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)UserDGV).BeginInit();
@@ -75,16 +60,6 @@
             panel1.BackColor = Color.MediumVioletRed;
             panel1.Controls.Add(label8);
             panel1.Controls.Add(pictureBox7);
-            panel1.Controls.Add(label7);
-            panel1.Controls.Add(pictureBox6);
-            panel1.Controls.Add(label6);
-            panel1.Controls.Add(pictureBox5);
-            panel1.Controls.Add(label5);
-            panel1.Controls.Add(pictureBox4);
-            panel1.Controls.Add(label4);
-            panel1.Controls.Add(pictureBox3);
-            panel1.Controls.Add(label3);
-            panel1.Controls.Add(pictureBox2);
             panel1.Controls.Add(label2);
             panel1.Controls.Add(label1);
             panel1.Controls.Add(pictureBox1);
@@ -99,126 +74,22 @@
             label8.AutoSize = true;
             label8.Font = new Font("Century Gothic", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label8.ForeColor = Color.White;
-            label8.Location = new Point(72, 632);
+            label8.Location = new Point(72, 643);
             label8.Name = "label8";
             label8.Size = new Size(90, 27);
             label8.TabIndex = 16;
             label8.Text = "Logout";
+            label8.Click += label8_Click;
             // 
             // pictureBox7
             // 
             pictureBox7.Image = (Image)resources.GetObject("pictureBox7.Image");
-            pictureBox7.Location = new Point(12, 621);
+            pictureBox7.Location = new Point(12, 632);
             pictureBox7.Name = "pictureBox7";
             pictureBox7.Size = new Size(52, 49);
             pictureBox7.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox7.TabIndex = 15;
             pictureBox7.TabStop = false;
-            // 
-            // label7
-            // 
-            label7.AutoSize = true;
-            label7.Font = new Font("Century Gothic", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label7.ForeColor = Color.White;
-            label7.Location = new Point(70, 528);
-            label7.Name = "label7";
-            label7.Size = new Size(138, 27);
-            label7.TabIndex = 14;
-            label7.Text = "Dashboard";
-            // 
-            // pictureBox6
-            // 
-            pictureBox6.Image = (Image)resources.GetObject("pictureBox6.Image");
-            pictureBox6.Location = new Point(12, 506);
-            pictureBox6.Name = "pictureBox6";
-            pictureBox6.Size = new Size(52, 49);
-            pictureBox6.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox6.TabIndex = 13;
-            pictureBox6.TabStop = false;
-            // 
-            // label6
-            // 
-            label6.AutoSize = true;
-            label6.Font = new Font("Century Gothic", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label6.ForeColor = Color.White;
-            label6.Location = new Point(72, 445);
-            label6.Name = "label6";
-            label6.Size = new Size(128, 27);
-            label6.TabIndex = 12;
-            label6.Text = "Treatment";
-            // 
-            // pictureBox5
-            // 
-            pictureBox5.Image = (Image)resources.GetObject("pictureBox5.Image");
-            pictureBox5.Location = new Point(12, 423);
-            pictureBox5.Name = "pictureBox5";
-            pictureBox5.Size = new Size(52, 49);
-            pictureBox5.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox5.TabIndex = 11;
-            pictureBox5.TabStop = false;
-            // 
-            // label5
-            // 
-            label5.AutoSize = true;
-            label5.Font = new Font("Century Gothic", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label5.ForeColor = Color.White;
-            label5.Location = new Point(72, 367);
-            label5.Name = "label5";
-            label5.Size = new Size(144, 27);
-            label5.TabIndex = 10;
-            label5.Text = "Prescription";
-            // 
-            // pictureBox4
-            // 
-            pictureBox4.Image = (Image)resources.GetObject("pictureBox4.Image");
-            pictureBox4.Location = new Point(12, 345);
-            pictureBox4.Name = "pictureBox4";
-            pictureBox4.Size = new Size(52, 49);
-            pictureBox4.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox4.TabIndex = 9;
-            pictureBox4.TabStop = false;
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Font = new Font("Century Gothic", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label4.ForeColor = Color.White;
-            label4.Location = new Point(72, 290);
-            label4.Name = "label4";
-            label4.Size = new Size(163, 27);
-            label4.TabIndex = 8;
-            label4.Text = "Appointment";
-            // 
-            // pictureBox3
-            // 
-            pictureBox3.Image = (Image)resources.GetObject("pictureBox3.Image");
-            pictureBox3.Location = new Point(12, 268);
-            pictureBox3.Name = "pictureBox3";
-            pictureBox3.Size = new Size(52, 49);
-            pictureBox3.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox3.TabIndex = 7;
-            pictureBox3.TabStop = false;
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Century Gothic", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label3.ForeColor = Color.White;
-            label3.Location = new Point(82, 212);
-            label3.Name = "label3";
-            label3.Size = new Size(93, 27);
-            label3.TabIndex = 6;
-            label3.Text = "Patient";
-            // 
-            // pictureBox2
-            // 
-            pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
-            pictureBox2.Location = new Point(12, 190);
-            pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(52, 49);
-            pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox2.TabIndex = 5;
-            pictureBox2.TabStop = false;
             // 
             // label2
             // 
@@ -419,11 +290,6 @@
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox7).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox6).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox5).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
@@ -437,16 +303,6 @@
         private Panel panel1;
         private Label label8;
         private PictureBox pictureBox7;
-        private Label label7;
-        private PictureBox pictureBox6;
-        private Label label6;
-        private PictureBox pictureBox5;
-        private Label label5;
-        private PictureBox pictureBox4;
-        private Label label4;
-        private PictureBox pictureBox3;
-        private Label label3;
-        private PictureBox pictureBox2;
         private Label label2;
         private Label label1;
         private PictureBox pictureBox1;

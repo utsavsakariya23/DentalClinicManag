@@ -188,5 +188,46 @@ namespace DentalClinicManag
         {
 
         }
+        void filter()
+        {
+            MyPatient Pat = new MyPatient();
+
+            string query = "select * from AppointmentTbl where Patient like '%" + SearchTb.Text + "%' ";
+            DataSet ds = Pat.ShowPatient(query);
+            AppointmentDGV.DataSource = ds.Tables[0];
+        }
+        private void SearchTb_TextChanged(object sender, EventArgs e)
+        {
+            filter();
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+            patient pat = new patient();
+            pat.Show();
+            this.Hide();
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+            treatment treat = new treatment();
+            treat.Show();
+            this.Hide();
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+            prescription pre = new prescription();
+            pre.Show();
+            this.Hide();
+
+        }
+
+        private void label8_Click(object sender, EventArgs e)
+        {
+            login log = new login();
+            log.Show();
+            this.Hide();
+        }
     }
 }

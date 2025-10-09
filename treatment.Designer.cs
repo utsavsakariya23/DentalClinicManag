@@ -43,10 +43,6 @@
             panel1 = new Panel();
             label8 = new Label();
             pictureBox7 = new PictureBox();
-            label7 = new Label();
-            pictureBox6 = new PictureBox();
-            label6 = new Label();
-            pictureBox5 = new PictureBox();
             label5 = new Label();
             pictureBox4 = new PictureBox();
             label4 = new Label();
@@ -56,13 +52,11 @@
             label2 = new Label();
             label1 = new Label();
             pictureBox1 = new PictureBox();
-            textBox4 = new TextBox();
+            SearchTb = new TextBox();
             TreatmentDGV = new DataGridView();
             panel2.SuspendLayout();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox7).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox6).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
@@ -206,10 +200,6 @@
             panel1.BackColor = Color.MediumVioletRed;
             panel1.Controls.Add(label8);
             panel1.Controls.Add(pictureBox7);
-            panel1.Controls.Add(label7);
-            panel1.Controls.Add(pictureBox6);
-            panel1.Controls.Add(label6);
-            panel1.Controls.Add(pictureBox5);
             panel1.Controls.Add(label5);
             panel1.Controls.Add(pictureBox4);
             panel1.Controls.Add(label4);
@@ -235,6 +225,7 @@
             label8.Size = new Size(90, 27);
             label8.TabIndex = 16;
             label8.Text = "Logout";
+            label8.Click += label8_Click;
             // 
             // pictureBox7
             // 
@@ -246,48 +237,6 @@
             pictureBox7.TabIndex = 15;
             pictureBox7.TabStop = false;
             // 
-            // label7
-            // 
-            label7.AutoSize = true;
-            label7.Font = new Font("Century Gothic", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label7.ForeColor = Color.White;
-            label7.Location = new Point(72, 528);
-            label7.Name = "label7";
-            label7.Size = new Size(138, 27);
-            label7.TabIndex = 14;
-            label7.Text = "Dashboard";
-            // 
-            // pictureBox6
-            // 
-            pictureBox6.Image = (Image)resources.GetObject("pictureBox6.Image");
-            pictureBox6.Location = new Point(12, 506);
-            pictureBox6.Name = "pictureBox6";
-            pictureBox6.Size = new Size(52, 49);
-            pictureBox6.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox6.TabIndex = 13;
-            pictureBox6.TabStop = false;
-            // 
-            // label6
-            // 
-            label6.AutoSize = true;
-            label6.Font = new Font("Century Gothic", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label6.ForeColor = Color.White;
-            label6.Location = new Point(72, 445);
-            label6.Name = "label6";
-            label6.Size = new Size(68, 27);
-            label6.TabIndex = 12;
-            label6.Text = "Users";
-            // 
-            // pictureBox5
-            // 
-            pictureBox5.Image = (Image)resources.GetObject("pictureBox5.Image");
-            pictureBox5.Location = new Point(12, 423);
-            pictureBox5.Name = "pictureBox5";
-            pictureBox5.Size = new Size(52, 49);
-            pictureBox5.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox5.TabIndex = 11;
-            pictureBox5.TabStop = false;
-            // 
             // label5
             // 
             label5.AutoSize = true;
@@ -298,6 +247,7 @@
             label5.Size = new Size(144, 27);
             label5.TabIndex = 10;
             label5.Text = "Prescription";
+            label5.Click += label5_Click;
             // 
             // pictureBox4
             // 
@@ -319,6 +269,7 @@
             label4.Size = new Size(163, 27);
             label4.TabIndex = 8;
             label4.Text = "Appointment";
+            label4.Click += label4_Click;
             // 
             // pictureBox3
             // 
@@ -340,6 +291,7 @@
             label3.Size = new Size(93, 27);
             label3.TabIndex = 6;
             label3.Text = "Patient";
+            label3.Click += label3_Click;
             // 
             // pictureBox2
             // 
@@ -383,14 +335,15 @@
             pictureBox1.TabIndex = 2;
             pictureBox1.TabStop = false;
             // 
-            // textBox4
+            // SearchTb
             // 
-            textBox4.ForeColor = Color.DodgerBlue;
-            textBox4.Location = new Point(667, 313);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(168, 27);
-            textBox4.TabIndex = 11;
-            textBox4.Text = "Filter By Name";
+            SearchTb.ForeColor = Color.DodgerBlue;
+            SearchTb.Location = new Point(667, 313);
+            SearchTb.Name = "SearchTb";
+            SearchTb.Size = new Size(168, 27);
+            SearchTb.TabIndex = 11;
+            SearchTb.Text = "Filter By Name";
+            SearchTb.TextChanged += SearchTb_TextChanged;
             // 
             // TreatmentDGV
             // 
@@ -409,7 +362,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(1266, 714);
-            Controls.Add(textBox4);
+            Controls.Add(SearchTb);
             Controls.Add(TreatmentDGV);
             Controls.Add(panel2);
             Controls.Add(label9);
@@ -425,8 +378,6 @@
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox7).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox6).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox5).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
@@ -444,10 +395,6 @@
         private Panel panel1;
         private Label label8;
         private PictureBox pictureBox7;
-        private Label label7;
-        private PictureBox pictureBox6;
-        private Label label6;
-        private PictureBox pictureBox5;
         private Label label5;
         private PictureBox pictureBox4;
         private Label label4;
@@ -463,7 +410,7 @@
         private Label label10;
         private TextBox TreatDesc;
         private Label label14;
-        private TextBox textBox4;
+        private TextBox SearchTb;
         private DataGridView TreatmentDGV;
         private Button button3;
         private Button button2;

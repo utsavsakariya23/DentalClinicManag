@@ -32,10 +32,6 @@
             panel1 = new Panel();
             label8 = new Label();
             pictureBox7 = new PictureBox();
-            label7 = new Label();
-            pictureBox6 = new PictureBox();
-            label6 = new Label();
-            pictureBox5 = new PictureBox();
             label5 = new Label();
             pictureBox4 = new PictureBox();
             label4 = new Label();
@@ -47,6 +43,7 @@
             pictureBox1 = new PictureBox();
             label9 = new Label();
             panel2 = new Panel();
+            button3 = new Button();
             button2 = new Button();
             AllergyTb = new TextBox();
             label13 = new Label();
@@ -61,13 +58,10 @@
             label12 = new Label();
             label10 = new Label();
             GenCb = new ComboBox();
-            textBox5 = new TextBox();
+            SearchTb = new TextBox();
             PatientDGV = new DataGridView();
-            button3 = new Button();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox7).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox6).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
@@ -81,10 +75,6 @@
             panel1.BackColor = Color.MediumVioletRed;
             panel1.Controls.Add(label8);
             panel1.Controls.Add(pictureBox7);
-            panel1.Controls.Add(label7);
-            panel1.Controls.Add(pictureBox6);
-            panel1.Controls.Add(label6);
-            panel1.Controls.Add(pictureBox5);
             panel1.Controls.Add(label5);
             panel1.Controls.Add(pictureBox4);
             panel1.Controls.Add(label4);
@@ -110,6 +100,7 @@
             label8.Size = new Size(90, 27);
             label8.TabIndex = 16;
             label8.Text = "Logout";
+            label8.Click += label8_Click;
             // 
             // pictureBox7
             // 
@@ -121,48 +112,6 @@
             pictureBox7.TabIndex = 15;
             pictureBox7.TabStop = false;
             // 
-            // label7
-            // 
-            label7.AutoSize = true;
-            label7.Font = new Font("Century Gothic", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label7.ForeColor = Color.White;
-            label7.Location = new Point(72, 528);
-            label7.Name = "label7";
-            label7.Size = new Size(138, 27);
-            label7.TabIndex = 14;
-            label7.Text = "Dashboard";
-            // 
-            // pictureBox6
-            // 
-            pictureBox6.Image = (Image)resources.GetObject("pictureBox6.Image");
-            pictureBox6.Location = new Point(12, 506);
-            pictureBox6.Name = "pictureBox6";
-            pictureBox6.Size = new Size(52, 49);
-            pictureBox6.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox6.TabIndex = 13;
-            pictureBox6.TabStop = false;
-            // 
-            // label6
-            // 
-            label6.AutoSize = true;
-            label6.Font = new Font("Century Gothic", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label6.ForeColor = Color.White;
-            label6.Location = new Point(72, 445);
-            label6.Name = "label6";
-            label6.Size = new Size(68, 27);
-            label6.TabIndex = 12;
-            label6.Text = "Users";
-            // 
-            // pictureBox5
-            // 
-            pictureBox5.Image = (Image)resources.GetObject("pictureBox5.Image");
-            pictureBox5.Location = new Point(12, 423);
-            pictureBox5.Name = "pictureBox5";
-            pictureBox5.Size = new Size(52, 49);
-            pictureBox5.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox5.TabIndex = 11;
-            pictureBox5.TabStop = false;
-            // 
             // label5
             // 
             label5.AutoSize = true;
@@ -173,6 +122,7 @@
             label5.Size = new Size(144, 27);
             label5.TabIndex = 10;
             label5.Text = "Prescription";
+            label5.Click += label5_Click;
             // 
             // pictureBox4
             // 
@@ -216,6 +166,7 @@
             label3.Size = new Size(163, 27);
             label3.TabIndex = 6;
             label3.Text = "Appointment";
+            label3.Click += label3_Click;
             // 
             // pictureBox2
             // 
@@ -291,6 +242,21 @@
             panel2.Name = "panel2";
             panel2.Size = new Size(946, 272);
             panel2.TabIndex = 7;
+            // 
+            // button3
+            // 
+            button3.BackColor = Color.Green;
+            button3.FlatAppearance.BorderSize = 0;
+            button3.FlatStyle = FlatStyle.Flat;
+            button3.Font = new Font("Century Gothic", 13.8F);
+            button3.ForeColor = Color.White;
+            button3.Location = new Point(490, 219);
+            button3.Name = "button3";
+            button3.Size = new Size(115, 39);
+            button3.TabIndex = 24;
+            button3.Text = "Edit";
+            button3.UseVisualStyleBackColor = false;
+            button3.Click += button3_Click;
             // 
             // button2
             // 
@@ -441,14 +407,15 @@
             GenCb.Size = new Size(250, 35);
             GenCb.TabIndex = 7;
             // 
-            // textBox5
+            // SearchTb
             // 
-            textBox5.ForeColor = Color.DodgerBlue;
-            textBox5.Location = new Point(633, 344);
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(168, 27);
-            textBox5.TabIndex = 18;
-            textBox5.Text = "Filter By Patient Name";
+            SearchTb.ForeColor = Color.DodgerBlue;
+            SearchTb.Location = new Point(589, 345);
+            SearchTb.Name = "SearchTb";
+            SearchTb.Size = new Size(168, 27);
+            SearchTb.TabIndex = 18;
+            SearchTb.Text = "Filter By Patient Name";
+            SearchTb.TextChanged += SearchTb_TextChanged;
             // 
             // PatientDGV
             // 
@@ -461,28 +428,13 @@
             PatientDGV.TabIndex = 17;
             PatientDGV.CellContentClick += PatientDGV_CellContentClick;
             // 
-            // button3
-            // 
-            button3.BackColor = Color.Green;
-            button3.FlatAppearance.BorderSize = 0;
-            button3.FlatStyle = FlatStyle.Flat;
-            button3.Font = new Font("Century Gothic", 13.8F);
-            button3.ForeColor = Color.White;
-            button3.Location = new Point(490, 219);
-            button3.Name = "button3";
-            button3.Size = new Size(115, 39);
-            button3.TabIndex = 24;
-            button3.Text = "Edit";
-            button3.UseVisualStyleBackColor = false;
-            button3.Click += button3_Click;
-            // 
             // patient
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(1266, 714);
-            Controls.Add(textBox5);
+            Controls.Add(SearchTb);
             Controls.Add(panel2);
             Controls.Add(PatientDGV);
             Controls.Add(label9);
@@ -495,8 +447,6 @@
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox7).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox6).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox5).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
@@ -513,10 +463,6 @@
         private Panel panel1;
         private Label label8;
         private PictureBox pictureBox7;
-        private Label label7;
-        private PictureBox pictureBox6;
-        private Label label6;
-        private PictureBox pictureBox5;
         private Label label5;
         private PictureBox pictureBox4;
         private Label label4;
@@ -541,7 +487,7 @@
         private TextBox AllergyTb;
         private Label label13;
         private Label label15;
-        private TextBox textBox5;
+        private TextBox SearchTb;
         private DataGridView PatientDGV;
         private Button button2;
         private Button button3;

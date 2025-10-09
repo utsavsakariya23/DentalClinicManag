@@ -30,15 +30,15 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(login));
             panel1 = new Panel();
+            label5 = new Label();
             pictureBox1 = new PictureBox();
             label1 = new Label();
             label2 = new Label();
             label3 = new Label();
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
+            UnameTb = new TextBox();
+            UpassTb = new TextBox();
             button1 = new Button();
             label4 = new Label();
-            label5 = new Label();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
@@ -53,6 +53,18 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(450, 128);
             panel1.TabIndex = 0;
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Font = new Font("Century Gothic", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label5.ForeColor = Color.White;
+            label5.Location = new Point(421, 5);
+            label5.Name = "label5";
+            label5.Size = new Size(23, 27);
+            label5.TabIndex = 4;
+            label5.Text = "x";
+            label5.Click += label5_Click;
             // 
             // pictureBox1
             // 
@@ -97,22 +109,23 @@
             label3.TabIndex = 4;
             label3.Text = "Password";
             // 
-            // textBox1
+            // UnameTb
             // 
-            textBox1.Font = new Font("Century Gothic", 13.8F);
-            textBox1.Location = new Point(187, 223);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(224, 36);
-            textBox1.TabIndex = 5;
+            UnameTb.Font = new Font("Century Gothic", 13.8F);
+            UnameTb.Location = new Point(187, 223);
+            UnameTb.Name = "UnameTb";
+            UnameTb.Size = new Size(224, 36);
+            UnameTb.TabIndex = 5;
             // 
-            // textBox2
+            // UpassTb
             // 
-            textBox2.Font = new Font("Century Gothic", 13.8F);
-            textBox2.Location = new Point(187, 289);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(224, 36);
-            textBox2.TabIndex = 6;
-            textBox2.TextChanged += textBox2_TextChanged;
+            UpassTb.Font = new Font("Century Gothic", 13.8F);
+            UpassTb.Location = new Point(187, 289);
+            UpassTb.Name = "UpassTb";
+            UpassTb.PasswordChar = '*';
+            UpassTb.Size = new Size(224, 36);
+            UpassTb.TabIndex = 6;
+            UpassTb.TextChanged += textBox2_TextChanged;
             // 
             // button1
             // 
@@ -127,6 +140,7 @@
             button1.TabIndex = 7;
             button1.Text = "Login";
             button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
             // 
             // label4
             // 
@@ -138,18 +152,7 @@
             label4.Size = new Size(84, 26);
             label4.TabIndex = 8;
             label4.Text = "Admin";
-            // 
-            // label5
-            // 
-            label5.AutoSize = true;
-            label5.Font = new Font("Century Gothic", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label5.ForeColor = Color.White;
-            label5.Location = new Point(421, 5);
-            label5.Name = "label5";
-            label5.Size = new Size(23, 27);
-            label5.TabIndex = 4;
-            label5.Text = "x";
-            label5.Click += label5_Click;
+            label4.Click += label4_Click;
             // 
             // login
             // 
@@ -158,8 +161,8 @@
             ClientSize = new Size(450, 494);
             Controls.Add(label4);
             Controls.Add(button1);
-            Controls.Add(textBox2);
-            Controls.Add(textBox1);
+            Controls.Add(UpassTb);
+            Controls.Add(UnameTb);
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(label1);
@@ -183,8 +186,8 @@
         private Label label1;
         private Label label2;
         private Label label3;
-        private TextBox textBox1;
-        private TextBox textBox2;
+        private TextBox UnameTb;
+        private TextBox UpassTb;
         private Button button1;
         private Label label4;
         private Label label5;

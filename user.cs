@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.VisualBasic.Logging;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -124,6 +125,13 @@ namespace DentalClinicManag
 
                 key = Convert.ToInt32(row.Cells[0].Value);
             }
+        }
+
+        private void label8_Click(object sender, EventArgs e)
+        {
+            login log = new login();
+            log.Show();
+            this.Hide();
         }
     }
 
